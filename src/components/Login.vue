@@ -1,8 +1,5 @@
 <template>
   <mdb-container>
-    <hr/>
-    <h4>Sesame</h4>
-    <hr/>
     <mdb-row class="text-center">
       <mdb-col sm="6" style="margin: auto">
         <form v-on:submit="submitForm" action="#" method="post" novalidate="true">
@@ -61,6 +58,7 @@
           login: this.login,
           password: this.password,
         }).then(response => {
+          console.log(response)
           VueCookies.set('accessToken' , response.data.accessToken, '2h')
           this.$router.push(`/events`)
           // eslint-disable-next-line no-unused-vars
