@@ -21,6 +21,12 @@
                :isValid="validation.closeAt.valid"
                :invalidFeedback="validation.closeAt.invalidFeedback"
                required/>
+    <mdb-input bg label="IP" id="ip"
+               v-model="ip"
+               :customValidation="validation.ip.validated"
+               :isValid="validation.ip.valid"
+               :invalidFeedback="validation.ip.invalidFeedback"
+               required/>
 
     <mdb-btn class="px-5" block color="grey" type="submit">Save</mdb-btn>
   </form>
@@ -47,6 +53,7 @@ export default {
       name: '',
       openAt: '',
       closeAt: '',
+      ip: '',
       validation: {
         name: {
           valid: false,
@@ -60,6 +67,10 @@ export default {
           valid: false,
           validated: false
         },
+        ip: {
+          valid: false,
+          validated: false
+        },
       }
     }
   },
@@ -69,6 +80,7 @@ export default {
         this.name = response.data.name
         this.openAt = response.data.openAt
         this.closeAt = response.data.closeAt
+        this.ip = response.data.ip
       })
     }
 

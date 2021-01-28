@@ -4,6 +4,7 @@
       <h4 class="demo-title"><strong>Events</strong></h4>
     </mdb-row>
     <hr/>
+    <CurrentClients/>
     <mdb-row class="mt-5 pt-5 mx-3" style="display: none">
       <mdb-col class="sm-1">
         <h4>Date</h4>
@@ -41,10 +42,12 @@
   import axios from 'axios'
   import querystring from 'querystring'
   import VueCookies from 'vue-cookies'
+  import CurrentClients from "@/components/CurrentClients";
 
   export default {
     name: 'EventList',
     components: {
+      CurrentClients,
       Datepicker,
       mdbContainer,
       mdbRow,
